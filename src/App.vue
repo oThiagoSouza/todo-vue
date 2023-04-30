@@ -1,47 +1,42 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+  <div class="container">
+    <header class="p-5 mt-4 mb-4 rounded-3 bg-light">
+    <h1>Minhas tarefas</h1>
+    <p>
+      Você possui 7 tarefas pendentes
+    </p>
   </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <form>
+      <div class="row">
+          <div class="col">
+          <input type="text" placeholder="Digite aqui sua tarefa" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control">
+            <option value="Todas">Todas tarefas</option>
+            <option value="Pendentes">Pendentes</option>
+            <option value="Finalizadas">Finalizadas</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <ul class="list-group mt-4">
+      <li class="list-group-item">
+        <input type="checkbox">
+        <label class="ms-2" for="">
+          Pagar cartão Inter
+        </label>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
