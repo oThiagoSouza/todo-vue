@@ -1,4 +1,24 @@
 <script setup>
+import { reactive } from 'vue';
+
+
+  const estado = reactive({
+    tarefas: [
+      {
+        titulo: 'Pagar cartão Inter',
+        finalizada: false
+      },
+      {
+        titulo: 'Estudar faculdade',
+        finalizada: false
+      },
+      {
+        titulo: 'Estudar VueJS',
+        finalizada: true
+      }
+    ]
+  })
+
 </script>
 
 <template>
@@ -27,10 +47,10 @@
       </div>
     </form>
     <ul class="list-group mt-4">
-      <li class="list-group-item">
-        <input type="checkbox">
-        <label class="ms-2" for="">
-          Pagar cartão Inter
+      <li class="list-group-item" v-for="tarefa in estado.tarefas">
+        <input :checked="tarefa.finalizada" :id="tarefa.titulo" type="checkbox">
+        <label :class="{ done: tarefa.finalizada }" class="ms-2" for="tarefa.titulo">
+          {{ tarefa.titulo }}
         </label>
       </li>
     </ul>
@@ -39,4 +59,7 @@
 
 <style scoped>
 
+  .done{
+    text-decoration: line-through;
+  }
 </style>
