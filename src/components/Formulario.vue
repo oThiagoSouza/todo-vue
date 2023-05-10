@@ -16,7 +16,7 @@
                     <option value="todas">Todas tarefas</option>
                     <option value="pendentes">Pendentes</option>
                     <option value="finalizadas">Finalizadas</option>
-                </select>
+                </select>   
             </div>
         </div>
     </form>
